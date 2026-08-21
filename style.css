@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.whole {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-image: url("images/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.leftbar{
+  width: 12%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainshi {
+  width: 88%;
+  height: 100%;
+}
