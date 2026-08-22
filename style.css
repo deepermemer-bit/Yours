@@ -32,3 +32,205 @@ body {
   width: 88%;
   height: 100%;
 }
+
+.recenttab {
+  width: 82%;
+  height: 56%;
+  margin: 3% auto 0;
+  background: rgba(20,20,20,0.85);
+  border-radius: 28px;
+  padding: 18px 12px;
+}
+
+.recenttab h2 {
+  color: white; 
+  text-align: center;
+  font-family: "Abril Fatface", serif;
+  font-size: 1.6vw;
+  line-height: 1.25;
+}
+
+.tabs {
+  width: 100%;
+  height: calc(100% - 70px);
+  margin-top: 20px;
+}
+
+.yourstxt {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: clamp(60px,7vw,125px);
+  font-weight: bold;
+}
+
+.upar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 3vh 3vw 0;
+}
+
+.ghatika {
+  color: white;
+}
+
+#shan {
+  font-size: clamp(48px,5vw,82px);
+  font-weight: 400;
+}
+
+.mausam {
+  display: flex; 
+  align-items: center;
+  gap: 0.6vw;
+  color: white;
+}
+
+#tapmaan {
+  font-size: 2vw;
+  font-weight: 400;
+}
+
+#sthaan {
+  font-size: 0.8vw;
+  letter-spacing: 0.08em;
+}
+
+.mausamchin {
+  font-size: 1.5vw;
+}
+
+.searchshi {
+  width: 100%;
+  padding: 2vh 3vw 0;
+}
+
+#searchform {
+  width: 100%;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  background: rgba(0,0,0,0.95);
+  border-radius: 999px;
+  padding: 0 2vw;
+}
+
+.googleicon {
+  width: 2vw;
+  height: 2vw;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+#searchinput {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  padding: 0 1vw;
+  font-family: "Roboto",Arial,sans-serif;
+  font-size: 1.5vw;
+}
+
+#searchinput::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+.gaane {
+  width: 55%;
+  height: 45vh;
+  margin: 4vh 0 0 3vw;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0,0,0,0.9);
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.gaanchitra {
+  position: relative;
+  width: 100%;
+  height: 75%;
+  overflow: hidden;
+}
+
+#gaankhaal {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.gaanebaare {
+  position: absolute;
+  left: 0;
+  bottom: 3%;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+#gaannaam {
+  font-family: "Abril Fatface",serif;
+  font-size: 2vw;
+  line-height: 1.1;
+}
+
+#gaankalakaar {
+  margin-top: 0.5vh;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 0.8vw;
+  letter-spacing: 0.08em;
+}
+
+.musiccontrols {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2vw;
+}
+
+.progressshi {
+  width: 100%;
+}
+
+#progressbar {
+  width: 100%;
+  height: 0.4vh;
+  appearance: none;
+  -webkit-appearance: none;
+  background: rgba(255,255,255,0.35);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+#progressbar::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 0.7vw;
+  height: 0.7vw;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#progressbar::-moz-range-thumb {
+  width: 0.7vw;
+  height: 0.7vw;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
