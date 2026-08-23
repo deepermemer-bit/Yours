@@ -4,8 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>yours</title>
-  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+  rel="preconnect" 
+  href="https://fonts.gstatic.com" 
+  crossorigin
+  >
+  <link
+  href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:wght@400;500;700;800&display=swap"
+  rel="stylesheet"
+>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css"
+>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
       
 <body>
@@ -38,7 +53,7 @@
        <div class="mausam">
          <span id="tapmaan">20°</span>
          <span id="sthaan">DWARKA MOR</span>
-         <span class="mausamchin">☁</span>
+         <i class="wi wi-day-sunny mausamchin"></i>
        </div>
      </section>
 
@@ -59,7 +74,9 @@
        </form>
      </section>
 
-     <section class="gaane">
+     <div class="nichla">
+       
+      <section class="gaane">
        <div class="gaanchitra">
          <img
            id="gaankhaal"
@@ -100,8 +117,8 @@
        </div>
          
      </section>
-
-     <section class="todoshi">
+       
+      <section class="todoshi">
        <h2>TO-DO</h2>
        
        <div class="task">
@@ -159,7 +176,24 @@
            class="todobutton"
            >+</button>
        </div>
+
+        <div class="task">
+         <input
+           type="checkbox"
+           >
+         <span 
+           class="tasktext"
+           contenteditable="true"
+           >To-Do</span>
+         <button
+           type="button"
+           class="todobutton"
+           >+</button>
+        </div>
+        
      </section>
+       
+     </div>
      
    </main>
     

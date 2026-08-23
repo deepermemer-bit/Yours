@@ -22,21 +22,25 @@ body {
 }
 
 .leftbar{
-  width: 12%;
+  width: 30%;
+  height: 100%;
+  position: relative;
+  background: rgba(129,109,71,1);
+}
+
+.mainshi {
+  width: 70%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.mainshi {
-  width: 88%;
-  height: 100%;
-}
-
 .recenttab {
-  width: 82%;
-  height: 56%;
-  margin: 3% auto 0;
+  position: absolute;
+  top: 2%;
+  left: 3%;
+  width: 45%;
+  height: 96%;
   background: rgba(20,20,20,0.85);
   border-radius: 28px;
   padding: 18px 12px;
@@ -57,19 +61,25 @@ body {
 }
 
 .yourstxt {
-  flex: 1;
+  position: absolute;
+  top: 3%;
+  left: 44%;
+  width: 57%;
+  height: 96%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size: clamp(60px,7vw,125px);
+  font-size: clamp(200px,17vw,300px);
   font-weight: bold;
+  letter-spacing: 0.05em;
+  font-family: "Abril Fatface", serif;
 }
 
 .upar {
   width: 100%;
+  min-height: 27vh;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -77,43 +87,66 @@ body {
 }
 
 .ghatika {
-  color: white;
+  color: #000;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding: 2vh;
 }
 
 #shan {
-  font-size: clamp(48px,5vw,82px);
-  font-weight: 400;
+  display: block;
+  font-size: clamp(140px,15vw,240px);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  line-height: 0.9;
 }
 
 .mausam {
-  display: flex; 
+  width: 32%;
+  min-height: 240px;
+  padding: 1.5vw;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.6vw;
+  gap: 0.5vw;
+  flex-wrap: wrap;
   color: white;
+  background: rgba(20,20,20,0.85);
+  border-radius: 28px;
 }
 
 #tapmaan {
-  font-size: 2vw;
-  font-weight: 400;
-}
-
-#sthaan {
-  font-size: 0.8vw;
-  letter-spacing: 0.08em;
+  order: 1;
+  font-size: clamp(55px,6vw,100px);
+  font-weight: 700;
 }
 
 .mausamchin {
-  font-size: 1.5vw;
+  order: 2;
+  font-size: clamp(45px,5vw,80px);
+  line-height: 1;
+  color: white;
+  display: block;
+}
+
+#sthaan {
+  order: 3;
+  width: 100%;
+  text-align: center;
+  font-size: clamp(16px, 1.5vw, 28px);
+  letter-spacing: 0.08em;
 }
 
 .searchshi {
   width: 100%;
-  padding: 2vh 3vw 0;
+  padding: 13vh 3vw 0;
 }
 
 #searchform {
   width: 100%;
-  height: 6vh;
+  height: 8vh;
   display: flex;
   align-items: center;
   background: rgba(0,0,0,0.95);
@@ -122,8 +155,8 @@ body {
 }
 
 .googleicon {
-  width: 2vw;
-  height: 2vw;
+  width: 2.5vw;
+  height: 2.5vw;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -145,10 +178,19 @@ body {
   opacity: 1;
 }
 
+.nichla {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 2vw;
+  margin-top: auto;
+  padding: 0 3vw 3vh;
+}
+
 .gaane {
-  width: 55%;
+  width: 50%;
   height: 45vh;
-  margin: 4vh 0 0 3vw;
+  margin: 0;
   display: flex;
   flex-direction: column;
   background: rgba(0,0,0,0.9);
@@ -232,5 +274,89 @@ body {
   background: white;
   border: none;
   border-radius: 50%;
+  cursor: pointer;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  margin-top: 2vh;
+}
+
+.buttons button {
+  width: 2.5vw;
+  height: 2.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+#playpause {
+  width: 3vw;
+  height: 3vw;
+}
+
+.buttons button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.todoshi {
+  width: 46%;
+  height: 45vh;
+  margin: 0;
+  padding: 1.5vw;
+  background: rgba(20,20,20,0.85);
+  border-radius: 28px;
+  color: white;
+}
+
+.todoshi h2 {
+  text-align: center;
+  font-family: "Abril Fatface", serif;
+  font-size: 2.5vw;
+  margin-bottom: 2vh;
+}
+
+.task {
+  width: 100%;
+  min-height: 5vh;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  margin-bottom: 1vh;
+}
+
+.task input[type="checkbox"] {
+  width: 2vw;
+  height: 2vw;
+  cursor: pointer;
+}
+
+.tasktext {
+  flex: 1;
+  color: white;
+  font-family: "Roboto",Arial,sans-serif;
+  font-size: 1.5vw;
+  outline: none;
+}
+
+.todobutton {
+  width: 2vw;
+  height: 2vw;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 2vw;
   cursor: pointer;
 }
