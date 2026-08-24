@@ -79,11 +79,11 @@ body {
 
 .upar {
   width: 100%;
-  min-height: 27vh;
+  height: 29vh;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 3vh 3vw 0;
+  padding: 6vh 3vw 0;
 }
 
 .ghatika {
@@ -141,7 +141,7 @@ body {
 
 .searchshi {
   width: 100%;
-  padding: 13vh 3vw 0;
+  padding: 7vh 3vw 0;
 }
 
 #searchform {
@@ -319,44 +319,85 @@ body {
   background: rgba(20,20,20,0.85);
   border-radius: 28px;
   color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .todoshi h2 {
   text-align: center;
   font-family: "Abril Fatface", serif;
   font-size: 2.5vw;
+  line-height: 1;
   margin-bottom: 2vh;
 }
 
 .task {
   width: 100%;
-  min-height: 5vh;
+  height: 5.5vh;
+  min-height: 0;
   display: flex;
   align-items: center;
-  gap: 1vw;
+  padding: 0 1.2vw;
   margin-bottom: 1vh;
+  border: 2px solid white;
+  border-radius: 18px;
+  background: black;
 }
 
 .task input[type="checkbox"] {
-  width: 2vw;
-  height: 2vw;
+  width: 1.5vw;
+  height: 1.5vw;
+  margin: 0;
+  flex-shrink: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  background: transparent;
   cursor: pointer;
+}
+
+.task input[type="checkbox"]:checked {
+  background: white;
+  position: relative;
+}
+
+.task input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 1vw;
+  font-weight: bold;
 }
 
 .tasktext {
   flex: 1;
+  margin-left: 1vw;
   color: white;
   font-family: "Roboto",Arial,sans-serif;
-  font-size: 1.5vw;
+  font-size: 1.4vw;
+  font-weight: 400;
   outline: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .todobutton {
   width: 2vw;
   height: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1vw;
   border: none;
   background: transparent;
   color: white;
+  font-family: Arial, sans-serif;
   font-size: 2vw;
+  font-weight: 300;
   cursor: pointer;
 }
