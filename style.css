@@ -105,7 +105,8 @@ body {
 
 .mausam {
   width: 32%;
-  min-height: 240px;
+  height: 21vh;
+  min-height: 0px;
   padding: 1.5vw;
   display: flex;
   justify-content: space-between;
