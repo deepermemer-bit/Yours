@@ -114,24 +114,28 @@ function showRecentTabs() {
 }
 showRecentTabs();
 
-const tasks = document.querySelectorAll (".task");
-tasks.forEach(function(task, index) {
+const tasklist = document.querySelector(".tasklist");
+const addtodo = document.querySelector(".addtodo");
+function setupTask(task) {
   const checkbox = task.querySelector('input[type="checkbox"]');
   const tasktext = task.querySelector(".tasktext");
+  const deleteButton = task.querySelector(".todobutton");
   checkbox.addEventListener("change", function() {
-    if (checkbox.checked) {
-      task.classList.add("completed")
-        } else {
-          task.classList.remove("completed");
-        }
+    task.classList.toggle("completed", checkbox.checked);
     saveTasks();
-    });
-  tasktext.addEventListener("input", function() {saveTasks();
   });
-});
+  tasktext.addEventListener("input", function() {
+    saveTasks();
+  });
+  deleteButton.addEventListener("click", function() {
+    task.remove();
+    saveTasks();
+  });
+}
 
 function saveTasks() {
-  const taskData  = [];
+  const tasks = document.querySelectorAll(".task");
+  const taskData = [];
   tasks.forEach(function(task) {
     const checkbox = task.querySelector('input[type="checkbox"]');
     const tasktext = task.querySelector(".tasktext");
@@ -142,23 +146,38 @@ function saveTasks() {
   });
   localStorage.setItem("tasks", JSON.stringify(taskData));
 }
- function loadTasks() {
-   const savedTasks = JSON.parse(localStorage.getItem("tasks"));
-   if (!savedTasks) {
-     return;
-   }
-   tasks.forEach(function(task, index) {
-     const checkbox = task.querySelector('input[type="checkbox"]');
-     const tasktext = task.querySelector(".tasktext");
-     if (savedTasks[index]) {
-       tasktext.textContent =  savedTasks[index].text;
-       checkbox.checked = savedTasks[index].completed;
-       if (checkbox.checked) {
-         task.classList.add("completed");
-       }
-     }
-   });
- }
+function createTask(text = "To-do", completed = false) {
+  const task = document.createElement("div");
+  task.className = "task";
+  task.innerHTML = `
+  <input type="checkbox">
+  <span class="tasktext" contenteditable="true">${text}</span>
+  <button type="button" class="todobutton">×</button>`;
+  tasklist.appendChild(task);
+  const checkbox = task.querySelector('input[type="checkbox"]');
+  checkbox.checked = completed;
+  if (completed) {
+    task.classList.add("completed");
+  }
+  setupTask(task);
+}
 
+function loadTasks() {
+  const savedTasks = 
+    JSON.parse(localStorage.getItem("tasks")) || [];
+  if (savedTasks.length === 0) {
+    document.querySelectorAll(".task").forEach(setupTask);
+    return;
+  }
+  tasklist.innerHTML = "";
+  savedTasks.forEach(function(taskData) {
+    createTask(taskData.text, taskData.completed);
+  });
+}
+
+addtodo.addEventListener("click", function(){
+  createTask();
+  saveTasks();
+});
 loadTasks();
 

@@ -336,10 +336,30 @@ body {
   margin-bottom: 2vh;
 }
 
+.tasklist {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 0.5vw;
+}
+
+.tasklist::-webkit-scrollbar {
+  width: 0.4vw;
+}
+.tasklist::-webkit-scrollbar-track {
+  background: transparent;
+}
+.tasklist::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+}
+
 .task {
   width: 100%;
   height: 5.5vh;
-  min-height: 0;
+  min-height: 5.5vh;
   display: flex;
   align-items: center;
   padding: 0 1.2vw;
@@ -400,11 +420,18 @@ body {
   margin-left: 1vw;
   border: none;
   background: transparent;
-  color: white;
+  color: rgba(255,255,255,0.75);
   font-family: Arial, sans-serif;
-  font-size: 2vw;
-  font-weight: 300;
+  font-size: 1.6vw;
+  font-weight: 400;
+  line-height: 1;
   cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+.todobutton:hover {
+  color: white;
+  transform: scale(1.15);
 }
 
 .recent-item {
@@ -445,3 +472,26 @@ body {
   text-decoration: line-through;
   opacity: 0.5;
 }
+
+.addtodo {
+  width: 97%;
+  height: 5.5vh;
+  min-height: 5.5vh;
+  margin-top: 1vh;
+  border: 3px dashed rgba(255, 255, 255, 0.60);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 2vw;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.addtodo:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: white;
+}
+
