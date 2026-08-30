@@ -15,7 +15,7 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  background-image: url("images/bg.png");
+  background-image: url("images/bg2.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -25,7 +25,7 @@ body {
   width: 30%;
   height: 100%;
   position: relative;
-  background: rgba(129,109,71,1);
+  background: rgba(0,20,42,1);
 }
 
 .mainshi {
@@ -41,7 +41,7 @@ body {
   left: 3%;
   width: 45%;
   height: 96%;
-  background: rgba(20,20,20,0.85);
+  background: rgba(149, 149, 149, 0.30196078431372547);
   border-radius: 28px;
   padding: 18px 12px;
 }
@@ -87,7 +87,7 @@ body {
 }
 
 .ghatika {
-  color: #000;
+  color: #ffffff;
   height: 100%;
   display: flex;
   align-items: flex-start;
@@ -114,8 +114,9 @@ body {
   gap: 0.5vw;
   flex-wrap: wrap;
   color: white;
-  background: rgba(20,20,20,0.85);
+  background: linear-gradient(45deg, rgba(70, 70, 70, 0.70), rgba(177, 177, 177, 0.65));
   border-radius: 28px;
+  border: 2px solid rgba(255, 255, 255, 0.50);
 }
 
 #tapmaan {
@@ -150,9 +151,10 @@ body {
   height: 8vh;
   display: flex;
   align-items: center;
-  background: rgba(0,0,0,0.95);
+  background: linear-gradient(45deg, rgba(60, 60, 60, 0.60), rgba(143, 143, 143, 0.60));
   border-radius: 999px;
   padding: 0 2vw;
+  border: 1px solid rgba(255, 255, 255, 0.50);
 }
 
 .googleicon {
@@ -194,9 +196,10 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background: rgba(0,0,0,0.9);
+  background: linear-gradient(45deg, rgba(60, 60, 60, 0.60), rgba(143, 143, 143, 0.60));
   border-radius: 28px;
   overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.50);
 }
 
 .gaanchitra {
@@ -317,11 +320,12 @@ body {
   height: 45vh;
   margin: 0;
   padding: 1.5vw;
-  background: rgba(20,20,20,0.85);
+  background: linear-gradient(45deg, rgba(60, 60, 60, 0.60), rgba(143, 143, 143, 0.60));
   border-radius: 28px;
   color: white;
   display: flex;
   flex-direction: column;
+  border: 2px solid rgba(255, 255, 255, 0.50);
 }
 
 .todoshi h2 {
@@ -340,9 +344,9 @@ body {
   align-items: center;
   padding: 0 1.2vw;
   margin-bottom: 1vh;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 18px;
-  background: black;
+  background: linear-gradient(45deg, rgba(58, 58, 58, 0.6), rgba(22, 22, 22, 0.6));
 }
 
 .task input[type="checkbox"] {
@@ -359,7 +363,7 @@ body {
 }
 
 .task input[type="checkbox"]:checked {
-  background: white;
+  background: hwb(46 1% 0%);
   position: relative;
 }
 
@@ -369,7 +373,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: black;
+  color: hwb(0 100% 0%);
   font-size: 1vw;
   font-weight: bold;
 }
@@ -401,4 +405,43 @@ body {
   font-size: 2vw;
   font-weight: 300;
   cursor: pointer;
+}
+
+.recent-item {
+  width: 100%;
+  height: 8vh;
+  margin-bottom: 1.5vh;
+  padding: 0 0.8vw;
+  display: flex;
+  align-items: center;
+  gap: 0.8vw;
+  border-radius: 16px;
+  background: rgba(20, 20, 20, 0.45);
+  color: white;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 1vw;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.recent-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.recent-item img {
+  width: 2vw;
+  height: 2vw;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.recent-item span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.task.completed .tasktext {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
