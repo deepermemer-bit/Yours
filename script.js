@@ -1,3 +1,171 @@
+const songs = [
+  {
+    name: "BURA",
+    artist: "Farak, Thugs from Overseas, 10A",
+    audio: "gaan/Bura.mp3",
+    cover: "gaanchitr/Bura(cover).jpg",
+  },
+  {
+    name: "FIGHT BACK",
+    artist: "NEFFEX",
+    audio: "gaan/Fight Back.mp3",
+    cover: "gaanchitr/Fight back (cover).jpg",
+  },
+  {
+    name: "MADIRA",
+    artist: "Seedhe Maut",
+    audio: "gaan/Madira.mp3",
+    cover: "gaanchitr/Madira(cover).jpg",
+  },
+  {
+    name: "MAHESHWARI",
+    artist: "Little Bhatia, Aditya Raj",
+    audio: "gaan/MAHESHWARI.mp3",
+    cover: "gaanchitr/maheshwari(cover).jpg",
+  },
+  {
+    name: "A MODERN MANTRA",
+    artist: "Govinda",
+    audio: "gaan/A Modern Mantra.mp3", 
+    cover:"gaanchitr/A modern mantra (cover).jpg",
+  },
+  {
+    name: "YOUR EYES",
+    artist: "Barney Sku, Taqiya Zaman",
+    audio: "gaan/Your Eyes.mp3",
+    cover: "gaanchitr/Your eyes(cover).jpg",
+  },
+  {
+    name: "AAYI HO TUM",
+    artist: "PATHAK, Aviraag ",
+    audio: "gaan/Aayi Ho Tum.mp3",
+    cover: "gaanchitr/aayi ho tum(cover).jpg",
+  },
+  {
+    name: "ARSENAL",
+    artist: "Shlok, OG Tehran",
+    audio: "gaan/ARSENAL.mp3",
+    cover: "gaanchitr/Arsenal(cover).jpg",
+  },
+  {
+    name: "BARQAT",
+    artist: "Satyam, Nandan",
+    audio: "gaan/Barqat.mp3",
+    cover: "gaanchitr/Barqat(cover).jpg",
+  },
+  {
+    name: "UDI UDI",
+    artist: "Aneesh, Sarkar, Hruday, Aneesh Poojari",
+    audio: "gaan/Udi Udi.mp3",
+    cover: "gaanchitr/Udi udi(cover).jpg",
+  }
+];
+
+const audio = document.getElementById("audio");
+const gaankhaal = document.getElementById("gaankhaal");
+const gaannaam = document.getElementById("gaannaam");
+const gaankalakaar = document.getElementById("gaankalakaar")
+let currentSong = 0;
+let changingSong = false;
+
+function loadSong(index) {
+  const song = songs[index];
+  audio.src = song.audio;
+  gaankhaal.src = song.cover;
+  gaannaam.textContent = song.name;
+  gaankalakaar.textContent = `BY ${song.artist}`;
+}
+loadSong(currentSong);
+
+const playpause = document.getElementById("playpause");
+const playicon = document.getElementById("playicon");
+playpause.addEventListener("click", function() {
+  if (audio.paused) {
+    audio.play();
+    playicon.src = "images/pause.svg";
+  } else {
+    audio.pause();
+    playicon.src = "images/play.svg";
+  }
+});
+
+const pichla = document.getElementById("pichla");
+const aage = document.getElementById("aage");
+function changeSong(direction) {
+  if (changingSong) {
+    return;
+  }
+  changingSong = true;
+  const gaanchitra = document.querySelector(".gaanchitra");
+  if (direction === "next") {
+    gaanchitra.classList.add("slide-out-left");
+  } else {
+    gaanchitra.classList.add("slide-out-right");
+  }
+  setTimeout(function() {
+    if (direction === "next") {
+      currentSong++;
+      if (currentSong >= songs.length) {
+        currentSong = 0;
+      }
+    } else {
+      currentSong--;
+      if (currentSong < 0) {
+        currentSong = songs.length - 1;
+      }
+    }
+
+    loadSong(currentSong);
+    gaanchitra.classList.remove(
+      "slide-out-left",
+      "slide-out-right"
+    );
+    if (direction === "next") {
+      gaanchitra.classList.add("slide-in-right");
+    } else {
+      gaanchitra.classList.add("slide-in-left");
+    }
+    audio.play();
+    playicon.src = "images/pause.svg";
+    setTimeout(function() {
+      gaanchitra.classList.remove(
+        "slide-in-left",
+        "slide-in-right"
+      );
+      changingSong = false;
+    }, 350);
+  }, 350);
+}
+aage.addEventListener("click", function() {
+  changeSong("next");
+});
+pichla.addEventListener("click", function() {
+  changeSong("previous");
+});
+
+const progressbar = document.getElementById("progressbar");
+audio.addEventListener("timeupdate", function() {
+  if (audio.duration) {
+    const progress = (audio.currentTime / audio.duration) * 100;
+    progressbar.value = progress;
+    progressbar.style.background = `
+    linear-gradient(
+    to right,
+    white ${progress}%,
+    rgba(255,255,255,0.35) ${progress}%,
+    rgba(255,255,255,0.35) 100%)`;
+  }
+});
+progressbar.addEventListener("input", function() {
+  if (audio.duration) {
+    audio.currentTime = (progressbar.value / 100) * audio.duration;
+  }
+});
+
+audio.addEventListener("ended", function() {
+  changeSong("next");
+});
+
 const shan = document.getElementById("shan");
 function updateTime() {
   const now = new Date();

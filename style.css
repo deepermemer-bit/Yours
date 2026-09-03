@@ -257,7 +257,13 @@ body {
   height: 0.4vh;
   appearance: none;
   -webkit-appearance: none;
-  background: rgba(255,255,255,0.35);
+  background: linear-gradient(
+    to right,
+    white 0%,
+    white 0%,
+    rgba(255,255,255,0.35) 0%,
+    rgba(255,255,255,0.35) 100%
+  );
   border-radius: 999px;
   cursor: pointer;
 }
@@ -495,3 +501,64 @@ body {
   border-color: white;
 }
 
+.gaanchitra.slide-out-left, .gaanchitra.slide-out-right {
+  animation-duration: 0.35s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+.gaanchitra.slide-out-left {
+  animation-name: slideOutLeft;
+}
+.gaanchitra.slide-out-right {
+  animation-name: slideOutRight;
+}
+.gaanchitra.slide-in-left {
+  animation-name: slideInLeft;
+  animation-duration: 0.35s;
+  animation-timing-function: ease;
+}
+.gaanchitra.slide-in-right {
+  animation-name: slideInRight;
+  animation-duration: 0.35s;
+  animation-timing-function: ease;
+}
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
