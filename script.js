@@ -261,7 +261,7 @@ searchform.addEventListener("submit", function(event) {
       name: query,
       url: url
      });
-    recentTabs = recentTabs.slice(0,9);
+    recentTabs = recentTabs.slice(0,10);
     localStorage.setItem("recentTabs", JSON.stringify(recentTabs));
     window.location.href = url;
 });
@@ -273,12 +273,28 @@ function showRecentTabs() {
   recentTabs.forEach(function(tab) {
     const recentTab = document.createElement("div");
     recentTab.className = "recent-item";
-    recentTab.innerHTML = `<img src="images/googleicon.svg" alt="Google"> <span>${tab.name}</span>`;
+    const domain = new URL(tab.url).hostname;
+    recentTab.innerHTML = `<img src="https://www.google.com/s2/favicons?domain=${domain}&sz=64" 
+        alt=""> <span>${tab.name}</span>`;
+    const icon = recentTab.querySelector("img");
+    icon.addEventListener("error", function() {
+      icon.src = "images/googleicon.svg";
+    });
     recentTab.addEventListener("click", function() {
       window.location.href = tab.url;
     });
     tabs.appendChild(recentTab);
   });
+  if (recentTabs.length > 0) {
+  const deleteButton = document.createElement("button");
+  deleteButton.className = "delete-recent";
+  deleteButton.textContent = "DELETE";
+  deleteButton.addEventListener("click", function() {
+    localStorage.removeItem("recentTabs");
+    showRecentTabs();
+  });
+  tabs.appendChild(deleteButton);
+}
 }
 showRecentTabs();
 
@@ -349,3 +365,4 @@ addtodo.addEventListener("click", function(){
 });
 loadTasks();
 
+  

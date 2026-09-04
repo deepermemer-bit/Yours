@@ -58,6 +58,23 @@ body {
   width: 100%;
   height: calc(100% - 70px);
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 4px;
+}
+
+.tabs::-webkit-scrollbar {
+  width: 0.4vw;
+}
+.tabs::-webkit-scrollbar-track {
+  background: transparent;
+}
+.tabs::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
 }
 
 .yourstxt {
@@ -443,7 +460,8 @@ body {
 .recent-item {
   width: 100%;
   height: 8vh;
-  margin-bottom: 1.5vh;
+  min-height: 8vh;
+  margin-bottom: 0;
   padding: 0 0.8vw;
   display: flex;
   align-items: center;
@@ -459,6 +477,27 @@ body {
 
 .recent-item:hover {
   background: rgba(255, 255, 255, 0.15);
+}
+
+.delete-recent {
+  width: 100%;
+  height: 8vh;
+  min-height: 8vh;
+  margin-top: 0;
+  margin-bottom: 1.5vh;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 16px;
+  background: rgba(102, 102, 102, 0.45);
+  color: rgba(255,255,255,0.75);
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 1vw;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.delete-recent:hover {
+  background: rgba(153, 153, 153, 0.6);
+  color: white;
+  transform: scale(0.90);
 }
 
 .recent-item img {
@@ -562,3 +601,4 @@ body {
     opacity: 1;
   }
 }
+
