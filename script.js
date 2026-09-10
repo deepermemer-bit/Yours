@@ -188,13 +188,34 @@ let engine = localStorage.getItem("engine") || "google";
 const icon = document.querySelector(".googleicon");
 icon.src = engines[engine][0];
 icon.onclick = () => {
-  const e = prompt("1. Google\n2. Brave\n3. DuckDuckGo");
-  const keys = ["google", "brave", "duckduckgo"];
-  if (e >= 1 && e <= 3) {
-    engine = keys[e - 1];
-    localStorage.setItem("engine", engine);
-    icon.src = engines[engine][0];
-  }
+  const select = document.createElement("select");
+  select.innerHTML = `
+    <option value="">Choose Search Engine</option>
+    <option value="google">Google</option>
+    <option value="brave">Brave</option>
+    <option value="duckduckgo">DuckDuckGo</option>
+    `;
+  select.style.cssText = `
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    `;
+  document.body.appendChild(select);
+  select.focus();
+  select.onchange = () => {
+    if (select.value) {
+      engine = select.value;
+      localStorage.setItem("engine", engine);
+      icon.src = engines[engine][0];
+    }
+    select.remove();
+  };
+  select.onblur = () => select.remove();
 };
 const tapmaan = document.getElementById("tapmaan");
 const sthaan = document.getElementById("sthaan");
