@@ -26,7 +26,7 @@ const songs = [
   {
     name: "A MODERN MANTRA",
     artist: "Govinda",
-    audio: "gaan/A Modern Mantra.mp3", 
+    audio: "gaan/A Modern Mantra.mp3",
     cover:"gaanchitr/A modern mantra (cover).jpg",
   },
   {
@@ -179,7 +179,23 @@ setInterval(updateTime, 1000);
 
 const searchform = document.getElementById("searchform");
 const searchinput = document.getElementById("searchinput");
-
+const engines = {
+  google: ["images/googleicon.svg", "https://www.google.com/search?q="],
+  brave: ["images/braveicon.svg", "https://search.brave.com/search?q="],
+  duckduckgo: ["https://duckduckgo.com/favicon.ico", "https://duckduckgo.com/?q="]
+};
+let engine = localStorage.getItem("engine") || "google";
+const icon = document.querySelector(".googleicon");
+icon.src = engines[engine][0];
+icon.onclick = () => {
+  const e = prompt("1. Google\n2. Brave\n3. DuckDuckGo");
+  const keys = ["google", "brave", "duckduckgo"];
+  if (e >= 1 && e <= 3) {
+    engine = keys[e - 1];
+    localStorage.setItem("engine", engine);
+    icon.src = engines[engine][0];
+  }
+};
 const tapmaan = document.getElementById("tapmaan");
 const sthaan = document.getElementById("sthaan");
 const mausamchin = document.querySelector(".mausamchin");
@@ -193,7 +209,7 @@ async function getWeather(latitude, longitude) {
 
   updateWeatherIcon(data.current.weather_code);
 
-  const locationResponse = await fetch( 
+  const locationResponse = await fetch(
     `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
   );
 
@@ -254,7 +270,7 @@ searchform.addEventListener("submit", function(event) {
   ) {
     url = "https://" + query.replace(/^https?:\/\//,"");
   } else {
-    url = "https://www.google.com/search?q=" + encodeURIComponent(query);
+    url = engines[engine][1] + encodeURIComponent(query);
   }
     let recentTabs = JSON.parse(localStorage.getItem("recentTabs")) || [];
     recentTabs.unshift({
@@ -274,7 +290,7 @@ function showRecentTabs() {
     const recentTab = document.createElement("div");
     recentTab.className = "recent-item";
     const domain = new URL(tab.url).hostname;
-    recentTab.innerHTML = `<img src="https://www.google.com/s2/favicons?domain=${domain}&sz=64" 
+    recentTab.innerHTML = `<img src="https://www.google.com/s2/favicons?domain=${domain}&sz=64"
         alt=""> <span>${tab.name}</span>`;
     const icon = recentTab.querySelector("img");
     icon.addEventListener("error", function() {
@@ -347,7 +363,7 @@ function createTask(text = "To-do", completed = false) {
 }
 
 function loadTasks() {
-  const savedTasks = 
+  const savedTasks =
     JSON.parse(localStorage.getItem("tasks")) || [];
   if (savedTasks.length === 0) {
     document.querySelectorAll(".task").forEach(setupTask);
@@ -364,5 +380,3 @@ addtodo.addEventListener("click", function(){
   saveTasks();
 });
 loadTasks();
-
-  

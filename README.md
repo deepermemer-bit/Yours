@@ -4,7 +4,7 @@
 
 it is a custom new tab made by [me](https://github.com/deepermemer-bit). Its based on the feeling of something being your own thats what its name suggest, YOURS...
 
-and its theme is dark and blue so it wont hurt your eyes + as i am a guy who is into designing and shi... i tried to make it look good... 
+and its theme is dark and blue so it wont hurt your eyes + as i am a guy who is into designing and shi... i tried to make it look good...
 
 now let me start telling about its features...
 
@@ -15,9 +15,14 @@ now let me start telling about its features...
 ### `|Weather|`: *it shows the weather of your area*
 - #### you hv to allow it to hv access to your location
 
-### `|Search`: *it is the search bar where you can search stuff rn it only has google as search engine*
+### `|Search|`: *it is the search bar where you can search stuff rn it only has google as search engine*
 - #### typing a url like "youtube.com" or "whatsapp.com" or "cbsemastery.in" opens the direct link
 - #### typing something like "hi" or "suiiii" searches it on google
+- #### clicking on logo of search engine lets you to change search engine
+  - **Rn it has 3 search engines**
+    - google
+    - brave
+    - duckduckgo
 
 ### `|To-Do|`: *its one of the cards i hv in tab*
 - #### it has 4 tabs initialy...
@@ -51,7 +56,7 @@ asstes are made by me... as i am a designer guy so i made them on my own...
 knowing how to add api...
 i had used AI for checking if there is any syntax error in code...
 some icons are downloaded online not made by ai...
-so at the end i used it in understanding concepts... 
+so at the end i used it in understanding concepts...
 
 ## WHAT I USED TO COMPLETE TS -
 
@@ -78,11 +83,11 @@ so at the end i used it in understanding concepts...
 
 ## CREDITS -
 
-### CHAT GPT - FOR HELPING IN understanding CONCEPT 
+### CHAT GPT - FOR HELPING IN understanding CONCEPT
 
 ### Songs list:
 
-BURA - 
+BURA -
 
 Farak, Thugs from Overseas, 10A
 
@@ -98,9 +103,9 @@ Lyricist: Anand Mishra
 
 
 
-FIGHT  BACK - 
+FIGHT  BACK -
 
-NEFFEX 
+NEFFEX
 
 
 
@@ -112,7 +117,7 @@ Sharma, Abhijay Negi
 DL91 FM
 2025 DL91 ERA
 Released on: 2025-05-15
-Producer: Hurricane 
+Producer: Hurricane
 Music Publisher: Bhussi Entertainment LLP
 
 
@@ -124,8 +129,8 @@ Little Bhatia, Aditya Raj
 MAHESHWARI
 2026 Little Bhatia
 Released on: 2026-08-05
-Vocals: Aditya Raj 
-Lyricist: Aditya Raj 
+Vocals: Aditya Raj
+Lyricist: Aditya Raj
 Producer: devmusic
 
 
@@ -154,12 +159,12 @@ Composer, Writer: Barney Sku
 
 AAYI HO TUM -
 
-PATHAK, Aviraag 
+PATHAK, Aviraag
 
-Artist: PATHAK, Aviraag 
-Lyrics: PATHAK, Aviraag 
-Produced by: ABS 
-Mixed by: ABS 
+Artist: PATHAK, Aviraag
+Lyrics: PATHAK, Aviraag
+Produced by: ABS
+Mixed by: ABS
 Mastered by: ABS
 
 
@@ -170,9 +175,9 @@ Shlok, OG Tehran
 
 Audio Credits
 Written & Performed by:
-Shlok, OG Tehran 
-Produced & Mix-Mastered by: VNI 
-Distributed by: AGM Productions 
+Shlok, OG Tehran
+Produced & Mix-Mastered by: VNI
+Distributed by: AGM Productions
 
 
 
@@ -184,7 +189,7 @@ Barqat
 2026 Mashooriya Originals, under exclusive license to Mass Appeal
 Released on: 2026-04-07
 Producer: Nandan
-Mixing Engineer, Mastering Engineer: 
+Mixing Engineer, Mastering Engineer:
 Khushagra Gupta
 
 
@@ -197,7 +202,7 @@ Udi Udi
 2026 Mass Appeal
 Released on: 2026-02-26
 Producer: Hruday
-A And R Coordinator, A And R Administrator: 
+A And R Coordinator, A And R Administrator:
 Ranbir "Kpr" Kapoor
 A And R Coordinator: Sandeep Patil
 Lyricist: Sameeksha
