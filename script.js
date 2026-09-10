@@ -197,13 +197,15 @@ icon.onclick = () => {
     `;
   select.style.cssText = `
     position: fixed;
-    top: 20%;
-    left: 50%;
+    top: 37%;
+    left: 46%;
     transform: translateX(-50%);
     z-index: 9999;
     padding: 10px;
     border-radius: 10px;
     font-size: 16px;
+    background: rgba(0,20,42,1);
+    color: white;
     `;
   document.body.appendChild(select);
   select.focus();
