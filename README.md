@@ -206,4 +206,4 @@ A And R Coordinator, A And R Administrator:
 Ranbir "Kpr" Kapoor
 A And R Coordinator: Sandeep Patil
 Lyricist: Sameeksha
-Lyricist: Aneesh Poojari
+Lyricist: Aneesh Poojari.
